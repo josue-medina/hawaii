@@ -1,0 +1,227 @@
+:root {
+    --tropical-green: #2d6a4f;
+    --leaf-green: #52b788;
+    --sunset-pink: #ff4d6d;
+    --sand: #fefae0;
+    --beach-teal: #0077b6;
+    --deep-blue: #023e8a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--sand);
+    color: var(--tropical-green);
+    overflow-x: hidden;
+}
+
+.tropical-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #caf0f8 0%, #ffffff 100%);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.main-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 5rem;
+    margin: 10px 0;
+}
+
+.tagline {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+}
+
+/* Decorative Leaves */
+.leaf {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%232d6a4f" d="M50 0C50 0 80 30 80 60C80 90 50 100 50 100C50 100 20 90 20 60C20 30 50 0 50 0Z" opacity="0.6"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.leaf-1 {
+    top: -50px;
+    left: -50px;
+    transform: rotate(45deg);
+}
+
+.leaf-2 {
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(225deg);
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: var(--white);
+    margin: -30px 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 3;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-block span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--sunset-pink);
+}
+
+.time-block small {
+    font-size: 0.8rem;
+    color: var(--tropical-green);
+    text-transform: uppercase;
+}
+
+/* Details Section */
+.details {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #e0f2f1;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-flower {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Dress Code Styles */
+.dress-code {
+    padding: 0 2rem 2rem;
+}
+
+.dress-hint {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.palette-item {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--beach-teal);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.map-button:hover {
+    background-color: var(--deep-blue);
+}
+
+/* RSVP Section */
+.rsvp {
+    text-align: center;
+    padding: 2rem;
+}
+
+.rsvp-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--sunset-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .main-title { font-size: 3.5rem; }
+    .hero { height: 50vh; }
+}

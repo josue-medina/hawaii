@@ -1,5 +1,5 @@
 // Set the date for the countdown (March 24, 2027, 16:00:00)
-const eventDate = new Date("March 24, 2027 16:00:00").getTime();
+const eventDate = new Date("May 15, 2026 12:30:00").getTime();
 
 const countdown = setInterval(function() {
     const now = new Date().getTime();
@@ -35,3 +35,22 @@ document.addEventListener('mousemove', (e) => {
         leaf.style.transform = `translate(${x * speed}px, ${y * speed}px) rotate(${index === 0 ? 45 : 225}deg)`;
     });
 });
+
+// Background music autoplay workaround
+document.addEventListener('click', function() {
+    const audio = document.getElementById('bgMusic');
+    if (audio.paused) {
+        audio.play().catch(error => {
+            console.log("Autoplay blocked: " + error);
+        });
+    }
+}, { once: true });
+
+document.addEventListener('touchstart', function() {
+    const audio = document.getElementById('bgMusic');
+    if (audio.paused) {
+        audio.play().catch(error => {
+            console.log("Autoplay blocked: " + error);
+        });
+    }
+}, { once: true });

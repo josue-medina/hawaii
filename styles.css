@@ -195,6 +195,36 @@ body {
     background-color: var(--deep-blue);
 }
 
+/* Gifts Section */
+.gifts {
+    padding: 0 2rem 2rem;
+}
+
+.bank-details {
+    margin: 1.5rem 0;
+    text-align: left;
+    display: inline-block;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.envelope-note {
+    margin-top: 1rem;
+    color: var(--beach-teal);
+    font-weight: 600;
+}
+
+/* Age Restriction Note */
+.age-note {
+    padding: 0 2rem 1rem;
+}
+
+.info-card.highlight {
+    background: #fff8f8;
+    border: 2px dashed var(--sunset-pink);
+    color: #444;
+}
+
 /* RSVP Section */
 .rsvp {
     text-align: center;

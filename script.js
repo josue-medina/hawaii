@@ -39,6 +39,13 @@ document.addEventListener('mousemove', (e) => {
 // Background music autoplay workaround for Safari and Chrome
 function playMusic() {
     const audio = document.getElementById('bgMusic');
+    const overlay = document.getElementById('entry-overlay');
+    
+    // Hide overlay
+    if (overlay) {
+        overlay.classList.add('hidden');
+    }
+
     if (audio && audio.paused) {
         audio.load(); // Kickstart for Safari
         audio.play().then(() => {
@@ -49,7 +56,11 @@ function playMusic() {
     }
 }
 
-// Single interaction triggers music
-['click', 'touchstart', 'scroll'].forEach(event => {
+// Entry overlay click event
+document.getElementById('entry-overlay').addEventListener('click', playMusic);
+document.getElementById('entry-overlay').addEventListener('touchstart', playMusic);
+
+// Single interaction triggers music (fallback for cases without clicking the overlay)
+['click', 'touchstart'].forEach(event => {
     document.addEventListener(event, playMusic, { once: true });
 });

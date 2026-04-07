@@ -36,21 +36,20 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// Background music autoplay workaround
-document.addEventListener('click', function() {
+// Background music autoplay workaround for Safari and Chrome
+function playMusic() {
     const audio = document.getElementById('bgMusic');
-    if (audio.paused) {
-        audio.play().catch(error => {
-            console.log("Autoplay blocked: " + error);
+    if (audio && audio.paused) {
+        audio.load(); // Kickstart for Safari
+        audio.play().then(() => {
+            console.log("Audio playing successfully");
+        }).catch(error => {
+            console.log("Playback failed: ", error);
         });
     }
-}, { once: true });
+}
 
-document.addEventListener('touchstart', function() {
-    const audio = document.getElementById('bgMusic');
-    if (audio.paused) {
-        audio.play().catch(error => {
-            console.log("Autoplay blocked: " + error);
-        });
-    }
-}, { once: true });
+// Single interaction triggers music
+['click', 'touchstart', 'scroll'].forEach(event => {
+    document.addEventListener(event, playMusic, { once: true });
+});
